@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:clipChildren="false"
+    android:clipToPadding="false"
+    android:orientation="vertical">
+
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?actionBarSize"
+        app:title="@string/app_name" />
+
+
+    <EditText
+        android:id="@+id/etSearch"
+        style="@style/Text.Body"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/grid_4"
+        android:layout_marginTop="@dimen/grid_4"
+        android:layout_marginEnd="@dimen/grid_4"
+        android:layout_marginBottom="@dimen/grid_4"
+        android:drawableEnd="@drawable/ic_search"
+        android:hint="Cryptocurrency"
+        android:paddingStart="@dimen/grid_4"
+        android:paddingEnd="@dimen/grid_4" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/grid_4"
+        android:layout_marginEnd="@dimen/grid_4">
+
+        <Button
+            android:id="@+id/btLoad"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/grid_4"
+            android:layout_weight="1"
+            android:text="Load" />
+
+        <Button
+            android:id="@+id/btSort"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/grid_4"
+            android:layout_weight="1"
+            android:text="Sort" />
+
+    </LinearLayout>
+
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <androidx.fragment.app.FragmentContainerView
+            android:id="@+id/flContent"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+        <include
+            android:id="@+id/vLoading"
+            layout="@layout/view_loading"
+            android:visibility="gone" />
+
+        <include
+            android:id="@+id/vError"
+            layout="@layout/view_error"
+            android:visibility="gone" />
+    </FrameLayout>
+
+</LinearLayout>
+
+
